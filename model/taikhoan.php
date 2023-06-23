@@ -12,6 +12,12 @@ function kiemtraTaiKhoan($taikhoan, $matkhau)
     $item = pdo_query_one($sql);
     return $item;
 }
+function quenmk($taikhoan)
+{
+    $sql = "SELECT * FROM taikhoan WHERE taikhoan = '$taikhoan'";
+    $item = pdo_query_one($sql);
+    return $item;
+}
 
 function dstaikhoan()
 {

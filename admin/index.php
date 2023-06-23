@@ -4,6 +4,8 @@ include "../model/pdo.php";
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
 include "../model/taikhoan.php";
+include "../model/phanhoi.php";
+include "../model/giohang.php";
 include "header.php";
 
 //controller
@@ -123,7 +125,6 @@ if (isset($_GET['act'])) {
                //  Tài khoản 
           case 'listTk':
                $listAcc = dstaikhoan();
-               // var_dump ($listAcc); exit;
                include "taiKhoan/list.php";
                break;
 
@@ -133,6 +134,46 @@ if (isset($_GET['act'])) {
                }
                $listAcc = dstaikhoan();
                include "taiKhoan/list.php";
+               break;
+               //Phản hồi
+          case 'listPH':
+               $listphanhoi = dsphanhoi();
+               include "phanhoi/list.php";
+               break;
+          case 'xoaPH':
+               if (isset($_GET['id'])) {
+                    xoaphanhoi($_GET['id']);
+               }
+               $listphanhoi = dsphanhoi();
+               include "phanhoi/list.php";
+               break;
+               //giỏ hàng
+          case 'giohang':
+               $listCart = showCart();
+               include "giohang/list.php";
+               break;
+          case 'chitiet_giohang':
+               if(isset($_GET['id'])) {
+                         $get =$_GET['id'];
+                    $DetailCart = DetailCart($get);
+                    $infocart = showInfoCart($get);
+                    print_r($infocart); 
+                    // print_r($DetailCart); 
+                    if(isset($_POST['btn_status'])){
+                         changeOrderStatus($_POST['trangthai'],$id);
+                         header("location: ?act=giohang");
+                     }
+               }
+          
+               
+               include "giohang/chitiet_giohang.php";
+               break; 
+          case 'remove_cart':
+               if (isset($_GET['id'])) {
+                    DeleteCart($_GET['id']);
+               }
+               $listCart = showCart();
+               include "giohang/list.php";
                break;
           default:
                include "home.php";

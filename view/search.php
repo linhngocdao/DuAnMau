@@ -1,3 +1,6 @@
+<style>
+</style>
+
 <h3 class="title" style="text-align: center;">Tìm kiếm sản phẩm: <?php echo $_GET['key']; ?></h3>
 <div class="row">
       <?php 
@@ -6,7 +9,7 @@
       foreach ($search as $a => $value) {
         // print_r($seach); exit;
         echo '
-        <div class="col-lg-4 col-md-6">
+        <div class="search-product col-lg-4 col-md-6">
         <div class="single-product">
           <div class="product-img">
             <img class="img-fluid w-100" src="' . $ROOT . '../public/image/' . $value['img'] . '" alt="" />

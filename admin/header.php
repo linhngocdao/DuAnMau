@@ -26,8 +26,8 @@
                                 <a href="index.php?act=listTk" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-paperclip me-2"></i>Khách hàng</a>
                                 <a href="index.php?act=dsbl" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-comment-dots me-2"></i>Bình luận</a>
                                 <a href="index.php?act=thongke" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-comment-dots me-2"></i>Thống kê</a>
-                                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-map-marker-alt me-2"></i>Phản hồi</a>
-                                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-shopping-cart me-2"></i>Đơn hàng</a>
+                                <a href="index.php?act=listPH" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-map-marker-alt me-2"></i>Phản hồi</a>
+                                <a href="?act=giohang" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-shopping-cart me-2"></i>Đơn hàng</a>
                         </div>
                 </div>
                 <!-- /#sidebar-wrapper -->

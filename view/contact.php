@@ -1,25 +1,4 @@
-    <!--================Home Banner Area =================-->
-    <!-- <section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="container">
-          <div
-            class="banner_content d-md-flex justify-content-between align-items-center"
-          >
-            <div class="mb-3 mb-md-0">
-              <h2>Contact Us</h2>
-              <p>Very us move be blessed multiply night</p>
-            </div>
-            <div class="page_link">
-              <a href="index.html">Home</a>
-              <a href="contact.html">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!--================End Home Banner Area =================-->
 
-    <!-- ================ contact section start ================= -->
   <section class="section_gap">
     <div class="container">
       <div class="row">
@@ -27,11 +6,11 @@
           <h2 class="contact-title">Phản hồi tại đây</h2>
         </div>
         <div class="col-lg-8 mb-4 mb-lg-0">
-          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+          <form class="form-contact contact_form" action="" method="POST">
             <div class="row">
               <div class="col-12">
                 <div class="form-group">
-                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Nội dung cần phản hồi"></textarea>
+                    <textarea class="form-control w-100" name="content" id="content" cols="30" rows="9" placeholder="Nội dung cần phản hồi"></textarea>
                 </div>
               </div>
               <div class="col-sm-6">
@@ -46,15 +25,19 @@
               </div>
               <div class="col-12">
                 <div class="form-group">
-                  <input class="form-control" name="phone" id="subject" type="number" placeholder="Số điện thoại của bạn">
+                  <input class="form-control" name="number" id="subject" type="number" placeholder="Số điện thoại của bạn">
                 </div>
               </div>
             </div>
             <div class="form-group mt-lg-3">
-              <button type="submit" class="main_btn">Gửi thông tin</button>
+              <button type="submit" class="main_btn" name="main_btn">Gửi thông tin</button>
             </div>
           </form>
-
+          <?php
+                    if (isset($thongbao) && ($thongbao != '')) {
+                        echo $thongbao;
+                    }
+                    ?>
 
         </div>
 

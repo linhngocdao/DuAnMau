@@ -44,6 +44,17 @@ include "model/danhmuc.php";
     .btn-log:hover,.btn-log:active { background-color: initial; background-position: 0 0; color: #FF4742;}
     .btn-log:active { opacity: .5;}
     .text_us{color: blue; padding-bottom: -10000px;}
+    .cart-quantity {
+  font-size: 15px;
+  position: absolute;
+  top: 0;
+  /* background-color: #c9ae63; */
+  padding: 2px;
+  color: red;
+  text-align: center;
+  border-radius: 50%;
+}
+.nav-item{position: relative;}
 
   </style>
 </head>
@@ -64,7 +75,7 @@ include "model/danhmuc.php";
             <div class="float-right">
               <ul class="right_side">
                 <li>
-                  <a href="cart.html">
+                  <a href="?act=addcart">
                     Giỏ hàng
                   </a>
                 </li>
@@ -147,8 +158,13 @@ include "model/danhmuc.php";
                   </li>
 
                   <li class="nav-item">
-                    <a href="#" class="icons">
+                    <a href="index.php?act=addcart" class="icons">
                       <i class="ti-shopping-cart"></i>
+                      <?php 
+                    if(isset($_SESSION['mycart'])) {
+                        echo '<span class="cart-quantity">'.count($_SESSION['mycart']).'</span>';
+                    }
+                    ?>
                     </a>
                   </li>
 
@@ -159,8 +175,12 @@ include "model/danhmuc.php";
                         <?php
 
                         if (isset($_SESSION['taikhoan'])) {
+                          
                           echo ' <p class="text_us">Chào,<b> ' . $_SESSION['taikhoan']['hovaten'] . '</b> </p><br>
+                       
+                         
                             <a class="btn-log" href="./logout.php">Đăng xuất</a>
+                            
                             ';
                         }
                         ?>

@@ -75,11 +75,11 @@
     </div>
 
     <div class="row">
-      <?php 
-      $productNews=  getAllProHome(3);
-      // $productNews = getAllProHome();
-      
+      <?php
+      $productNews =  getAllProHome(3);
+
       foreach ($productNews as $key => $value) {
+        // print_r($value['id']); exit;
         extract($value);
         $linksp = "index.php?act=detailProduct&id=" . $value['id'];
         echo '
@@ -88,12 +88,9 @@
           <div class="product-img">
             <img class="img-fluid w-100" src="' . $ROOT . '../public/image/' . $value['img'] . '" alt="" />
             <div class="p_icon">
-              <a href="'.$linksp.'">
+              <a href="' . $linksp . '">
                 <i class="ti-eye"></i>
-              </a>
-              <a href="#">
-                <i class="ti-shopping-cart"></i>
-              </a>
+                 </a>
             </div>
           </div>
           <div class="product-btm">
@@ -147,19 +144,16 @@
       <?php
       $productHot = getAllProHome(9);
       foreach ($productHot as $key => $sp) {
-      $linksp = "index.php?act=detailProduct&id=" . $sp['id'];
-        
+        $linksp = "index.php?act=detailProduct&id=" . $sp['id'];
+
         echo '
             <div class="col-lg-4 col-md-6">
             <div class="single-product">
               <div class="product-img">
                 <img class="img-fluid w-100" src="' . $ROOT . '../public/image/' . $sp['img'] . '" alt="" />
                 <div class="p_icon">
-                  <a href="'.$linksp.'">
+                  <a href="' . $linksp . '">
                     <i class="ti-eye"></i>
-                  </a>
-                  <a href="#">
-                    <i class="ti-shopping-cart"></i>
                   </a>
                 </div>
               </div>

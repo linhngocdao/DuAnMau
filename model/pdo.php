@@ -75,3 +75,19 @@ function pdo_query_value($sql)
         unset($conn);
     }
 }
+
+function pdo_executes($sql) {
+    $args = array_slice(func_get_args(), 1);
+    try {
+        $conn = pdo_get_connection();
+        $stmt = $conn->prepare($sql);//$sql = INSERT INTO loai(ten_loai) values(?)
+        $stmt->execute($args);
+        $last_id = $conn->lastInsertId();
+        return $last_id;
+        
+    } catch (PDOException $e) {
+        return "Có lỗi xảy ra: " . $e->getMessage();
+    } finally {
+        unset($conn);
+    }
+}

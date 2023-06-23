@@ -5,18 +5,18 @@
                   <thead class="bg-light">
                       <tr>
                           <th>id</th>
-                          <th>Tên tài khoản</th>
                           <th>Họ và tên</th>
-                          <th>Quyền</th>
+                          <th>Email</th>
+                          <th>Số điện thoại</th>
+                          <th>Nội dung phản hồi</th>
                           <th>Thao tác</th>
                       </tr>
                   </thead>
                   <tbody>
                       <?php
-                        foreach ($listAcc as $tk) {
+                        foreach ($listphanhoi as $tk) {
                             extract($tk);
-                            // $suadm = "index.php?act=suadm&id=" . $id;
-                            $xoadm = "index.php?act=xoatk&id=" . $id;
+                            $xoadm = "index.php?act=xoaPH&id=" . $id;
                         ?>
                           <tr>
                               <td>
@@ -26,17 +26,22 @@
                               </td>
                               <td>
                                   <div class="d-flex align-items-center">
-                                      <?= $taikhoan ?>
+                                      <?= $name ?>
                                   </div>
                               </td>
                               <td>
                                   <div class="d-flex align-items-center">
-                                      <?= $hovaten ?>
+                                      <?= $email ?>
                                   </div>
                               </td>
                               <td>
                                   <div class="d-flex align-items-center">
-                                      <?= $role ?>
+                                      <?= $number ?>
+                                  </div>
+                              </td>
+                              <td>
+                                  <div class="d-flex align-items-center">
+                                      <?= $content ?>
                                   </div>
                               </td>
 
@@ -44,6 +49,9 @@
                                   <a href="<?= $xoadm ?>"><button class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không!')">
                                           Xóa
                                       </button></a>
+                                <a href="">
+                                    <button class="btn btn-success">Phản hồi lại</button>
+                                </a>
                               </td>
                           </tr>
                       <?php  }

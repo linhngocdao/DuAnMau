@@ -1,6 +1,6 @@
 <style>
   .s_product_img {
-    width: 400px;
+    width: 500px;
   }
 
   .cm_main {
@@ -20,20 +20,62 @@
   .cm_main button {
     padding: 6px 16px;
   }
-  .cm_f p,b{margin-left: 50px; color: black;}
-  .cm_f{display: flex}
-  .time_cm{padding-top: 24px; margin-left: 100px;}
-  .text_cm{font-weight: 600 !important; font-size: 16px !important; color: red; margin-left: 70px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;}
-  .product_same h3{margin-left: 70px; font-weight: 600;padding-top: 50px;}
-  .product_same{margin: 0 50px;}
-  .des_pro_detail{width: 600px;}
+
+  .cm_f p,
+  b {
+    margin-left: 50px;
+    color: black;
+  }
+
+  .cm_f {
+    display: flex
+  }
+
+  .time_cm {
+    padding-top: 24px;
+    margin-left: 100px;
+  }
+
+  .text_cm {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: red;
+    margin-left: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  }
+
+  .product_same h3 {
+    margin-left: 70px;
+    font-weight: 600;
+    padding-top: 50px;
+  }
+
+  .product_same {
+    margin: 0 50px;
+  }
+
+  .des_pro_detail {
+    width: 400px;
+    height: 160px;
+    overflow-x: auto;
+    scroll-behavior: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .de_pro {
+    margin: 0;
+    font-size: 15px;
+  }
 </style>
 <!--================Single Product Area =================-->
 <div class="product_image_area">
   <div class="container">
     <?php
     echo '
-      <div></div>
+    <form action="index.php?act=addcart" method="post">
       <div class="row s_product_inner">
       <div class="img_pro col-lg-6">
          <div class="s_product_img"> 
@@ -54,15 +96,38 @@
             </li>
           </ul>
           <p class="des_pro_detail">Chi tiết sản phẩm: ' . $one_sp['mota'] . '</p>
+
+                        <div class="product_count">
+                <label for="qty">Quantity:</label>
+                <input
+                  type="number"
+                  name="qty"
+                  id="sst"
+                  value="1"
+                  min="1"
+                  require
+                  title="Quantity:"
+                  class="input-text qty"
+                />
+       
+                  
+              </div
           <div class="card_area">
-            <a class="main_btn" href="#">Add to Cart</a>
+            <input type="hidden" name="id" value="' . $one_sp['id'] . '">
+            <input type="hidden" name="name" value="' . $one_sp['name'] . '">
+            <input type="hidden" name="price" value="' . $one_sp['price'] . '">
+            <input type="hidden" name="img" value="' . $one_sp['img'] . '">
+            <input class="main_btn" type="submit" name="addcart" value="Thêm vào giỏ hàng">
             <a class="icon_btn" href="#">
               <i class="lnr lnr lnr-heart"></i>
             </a>
           </div>
+        
+
         </div>
       </div>
-    </div>  ';
+    </div> 
+    </form> ';
     ?>
 
 
@@ -70,8 +135,8 @@
 </div>
 <!--================End Single Product Area =================-->
 <section class="cm_main">
-  
-<h3 class="text_cm">Xin mời bạn đăng nhập để được bình luận</h3> 
+
+  <h3 class="text_cm">Xin mời bạn đăng nhập để được bình luận</h3>
   <h3>Bình luận</h3>
 
   <form class="fm_cm form-group py-5">
@@ -83,14 +148,15 @@
 
   <div class="cm_f">
     <div>
-    <b>- Tên tài khoản: Đào Ngọc Linh</b>
-    <p>Sản phẩm rất tốt</p>
+      <b>- Tên tài khoản: Đào Ngọc Linh</b>
+      <p>Sản phẩm rất tốt</p>
     </div>
     <div class="time_cm">
       17:08 PM 11/12/2023
     </div>
   </div>
 </section>
+
 
 
 <section class="product_same">
