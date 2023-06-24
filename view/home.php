@@ -76,7 +76,7 @@
 
     <div class="row">
       <?php
-      $productNews =  getAllProHome(3);
+      $productNews =  getAllProHome(0);
 
       foreach ($productNews as $key => $value) {
         // print_r($value['id']); exit;

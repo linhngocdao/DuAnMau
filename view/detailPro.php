@@ -98,7 +98,7 @@
           <p class="des_pro_detail">Chi tiết sản phẩm: ' . $one_sp['mota'] . '</p>
 
                         <div class="product_count">
-                <label for="qty">Quantity:</label>
+                <label for="qty">Số lượng:</label>
                 <input
                   type="number"
                   name="qty"

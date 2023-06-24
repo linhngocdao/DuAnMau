@@ -146,8 +146,8 @@ if ((isset($_GET['act']))) {
                     }
                 } else {
                     $_SESSION['mycart'][$sp['id']] = $item;
+                    
                 }
-
             }
 
             if (isset($_POST['dathang'])) {

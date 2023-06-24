@@ -97,7 +97,7 @@
                                             <option value="Đang gửi">Đang gửi</option>
                                             <option value="Gửi hàng thành công">Gửi hàng thành công</option>
                                         </select> <br> <br>
-                                        <button name="btn_status" style="background-color: white;" type="submit">Xác nhận</button>
+                                        <button class="btn btn-success" name="btn_status" type="submit">Xác nhận</button>
                                     </form>
                                 </td>
                             </tr>

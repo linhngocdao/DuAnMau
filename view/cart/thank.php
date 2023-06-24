@@ -1,6 +1,7 @@
 <style>
     .ordersuccess{
     display: flex;
+    padding-top: 200px;
 }
 .content-order {
     margin-left: 30px;

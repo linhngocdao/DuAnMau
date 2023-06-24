@@ -157,11 +157,11 @@ if (isset($_GET['act'])) {
                          $get =$_GET['id'];
                     $DetailCart = DetailCart($get);
                     $infocart = showInfoCart($get);
-                    print_r($infocart); 
+                    // print_r($infocart); 
                     // print_r($DetailCart); 
                     if(isset($_POST['btn_status'])){
-                         changeOrderStatus($_POST['trangthai'],$id);
-                         header("location: ?act=giohang");
+                         changeOrderStatus($_POST['status'],$get);
+                         header("location:?act=giohang");
                      }
                }
           
